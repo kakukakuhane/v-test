@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>獣医学クイズ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+<div class="card">
+
+<h2>獣医学クイズ</h2>
+
+<select id="category">
+  <option value="all">すべて</option>
+  <option value="解剖">解剖</option>
+  <option value="生理">生理</option>
+  <option value="薬理">薬理</option>
+</select>
+
+<button id="wrong-btn">間違えた問題だけ</button>
+<button id="reset-btn">リセット</button>
+
+<hr>
+
+<div id="progress"></div>
+<div id="question"></div>
+<div id="choices"></div>
+
+<div id="result"></div>
+<div id="explanation"></div>
+
+<button id="prev">戻る</button>
+<button id="answer">回答</button>
+<button id="explain">解説</button>
+<button id="next">次へ</button>
+
+<div id="score"></div>
+
+</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
