@@ -975,7 +975,7 @@ function render() {
     btn.className = "choice";
     btn.innerText = c;
 
-    if (state.selected === i) btn.style.background = "#ddd";
+    if (state.selected === i) btn.classList.add("selected");
 
     if (state.answered) {
       if (i === q.correct) btn.classList.add("correct");
