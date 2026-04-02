@@ -1,4 +1,4 @@
-new app:
+
 
 // ===== データ =====
 let quizData = [
