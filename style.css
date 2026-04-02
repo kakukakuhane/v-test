@@ -1,30 +1,162 @@
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Body ===== */
 body {
-  font-family: sans-serif;
-  background: #f6f8fb;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #dfe9f3);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* ===== Container ===== */
 .container {
-  max-width: 700px;
-  margin: 30px auto;
-}
-
-.card {
-  background: white;
+  width: 100%;
+  max-width: 720px;
   padding: 20px;
-  border-radius: 12px;
 }
 
+/* ===== Card ===== */
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+/* ===== Title ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ===== Top Controls ===== */
+select, button {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  background: #f1f3f6;
+  margin-right: 10px;
+}
+
+/* ===== Buttons ===== */
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #4a6cf7;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background: #3a55d1;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ===== Divider ===== */
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* ===== Progress ===== */
+#progress {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+/* ===== Question ===== */
+#question {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+/* ===== Choices ===== */
 .choice {
   display: block;
+  width: 100%;
   margin: 10px 0;
-  padding: 10px;
-  cursor: pointer;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f5f7fb;
+  text-align: left;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
 }
 
+.choice:hover {
+  background: #e9efff;
+  border-color: #4a6cf7;
+}
+
+/* Selected */
+.choice.selected {
+  background: #dbe4ff;
+}
+
+/* Correct / Wrong */
 .correct {
-  color: green;
+  background: #e6ffed !important;
+  color: #1a7f37;
+  border: 1px solid #1a7f37;
 }
 
 .wrong {
-  color: red;
+  background: #ffecec !important;
+  color: #d93025;
+  border: 1px solid #d93025;
+}
+
+/* ===== Result ===== */
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* ===== Explanation ===== */
+#explanation {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f9fafc;
+  border-left: 4px solid #4a6cf7;
+  border-radius: 8px;
+  white-space: pre-line;
+}
+
+/* ===== Bottom Buttons ===== */
+#prev, #next, #answer, #explain {
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+/* ===== Score ===== */
+#score {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
