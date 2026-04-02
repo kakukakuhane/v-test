@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>獣医学クイズ</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
 </head>
-
 <body>
-<div class="container">
-<div class="card">
+  <a class="skip-link" href="#main">本文へ移動</a>
+  <main id="main" class="app-shell">
+    <section class="quiz-card" aria-labelledby="app-title">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Veterinary Study Quiz</p>
+          <h1 id="app-title">獣医学クイズ</h1>
+          <p class="subtitle">シンプルに解いて、すぐ復習できる学習用UIです。</p>
+        </div>
+      </header>
 
-<h2>獣医学クイズ</h2>
+      <section class="toolbar" aria-label="クイズ設定">
+        <div class="field-group">
+          <label for="category">カテゴリ</label>
+          <select id="category"></select>
+        </div>
+        <div class="toolbar-actions">
+          <button id="wrong-btn" class="btn btn-secondary" type="button">間違えた問題だけ</button>
+          <button id="reset-btn" class="btn btn-ghost" type="button">リセット</button>
+        </div>
+      </section>
 
-<select id="category">
-  <option value="all">すべて</option>
-  <option value="解剖">解剖</option>
-  <option value="生理">生理</option>
-  <option value="薬理">薬理</option>
-</select>
+      <section class="status-grid" aria-label="進行状況">
+        <div class="status-item">
+          <span class="status-label">進捗</span>
+          <strong id="progress">0 / 0</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">正解数</span>
+          <strong id="score">0 / 0</strong>
+        </div>
+        <div class="status-item">
+          <span class="status-label">モード</span>
+          <strong id="mode-label">通常</strong>
+        </div>
+      </section>
 
-<button id="wrong-btn">間違えた問題だけ</button>
-<button id="reset-btn">リセット</button>
+      <section class="question-panel" aria-live="polite">
+        <div class="question-meta">
+          <span id="question-number" class="chip">Q1</span>
+          <span id="question-category" class="chip chip-soft">-</span>
+        </div>
+        <h2 id="question" class="question-text"></h2>
+        <div id="choices" class="choices" role="list"></div>
+        <p id="result" class="result" aria-live="polite"></p>
+        <section id="explanation-box" class="explanation" hidden>
+          <h3>解説</h3>
+          <p id="explanation"></p>
+        </section>
+      </section>
 
-<hr>
+      <nav class="nav-actions" aria-label="問題操作">
+        <button id="prev" class="btn btn-ghost" type="button">戻る</button>
+        <button id="answer" class="btn btn-primary" type="button">回答する</button>
+        <button id="explain" class="btn btn-secondary" type="button">解説</button>
+        <button id="next" class="btn btn-ghost" type="button">次へ</button>
+      </nav>
+    </section>
+  </main>
 
-<div id="progress"></div>
-<div id="question"></div>
-<div id="choices"></div>
-
-<div id="result"></div>
-<div id="explanation"></div>
-
-<button id="prev">戻る</button>
-<button id="answer">回答</button>
-<button id="explain">解説</button>
-<button id="next">次へ</button>
-
-<div id="score"></div>
-
-</div>
-</div>
-
-<script src="app.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
