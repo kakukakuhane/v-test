@@ -28,7 +28,6 @@ body {
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
 }
 
 /* ===== Title ===== */
@@ -40,17 +39,12 @@ h2 {
 }
 
 /* ===== Top Controls ===== */
-select, button {
-  border: none;
-  outline: none;
-  font-size: 14px;
-}
-
 select {
   padding: 10px;
   border-radius: 8px;
   background: #f1f3f6;
-  margin-right: 10px;
+  border: none;
+  font-size: 14px;
 }
 
 /* ===== Buttons ===== */
@@ -59,13 +53,19 @@ button {
   border-radius: 8px;
   background: #4a6cf7;
   color: white;
+  border: none;
+  font-size: 14px;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
   background: #3a55d1;
   transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0); /* FIX jump */
 }
 
 button:disabled {
@@ -93,6 +93,7 @@ hr {
   font-weight: 500;
   margin-bottom: 20px;
   white-space: pre-line;
+  line-height: 1.6;
 }
 
 /* ===== Choices ===== */
@@ -104,10 +105,14 @@ hr {
   border-radius: 10px;
   background: #f5f7fb;
   text-align: left;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
+
+  /* CRITICAL FIXES */
   border: 1px solid transparent;
+  min-height: 48px;
 }
 
+/* Hover */
 .choice:hover {
   background: #e9efff;
   border-color: #4a6cf7;
@@ -116,15 +121,17 @@ hr {
 /* Selected */
 .choice.selected {
   background: #dbe4ff;
+  border: 1px solid #4a6cf7;
 }
 
-/* Correct / Wrong */
+/* Correct */
 .correct {
   background: #e6ffed !important;
   color: #1a7f37;
   border: 1px solid #1a7f37;
 }
 
+/* Wrong */
 .wrong {
   background: #ffecec !important;
   color: #d93025;
@@ -135,6 +142,7 @@ hr {
 #result {
   margin-top: 15px;
   font-weight: bold;
+  min-height: 24px; /* prevents jump */
 }
 
 /* ===== Explanation ===== */
@@ -145,6 +153,8 @@ hr {
   border-left: 4px solid #4a6cf7;
   border-radius: 8px;
   white-space: pre-line;
+
+  min-height: 60px; /* prevents jump */
 }
 
 /* ===== Bottom Buttons ===== */
